@@ -29,12 +29,21 @@ const App = () => {
     setRight(right + 1);
   };
 
+  const handelReset = () => {
+    setLeft(0);
+    setRight(0);
+    setAll([]);
+  };
+
   return (
     <div>
       {left}
       <button onClick={handleLeftClick}>left</button>
       <button onClick={handleRightClick}>right</button>
       {right}
+      <p>
+        <button onClick={handelReset}>Reset</button>
+      </p>
 
       <p>Click totales {left + right}</p>
       {allClicks.length === 0 ? (
